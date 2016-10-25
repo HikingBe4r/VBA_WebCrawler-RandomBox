@@ -1,0 +1,74 @@
+Sub RandomBox()
+
+    Dim dest As Range
+    Set dest = Worksheets("°¡Ã­").Range("A3")
+    
+    Dim numOfGacha As Integer
+    Dim rNum As Integer
+    
+    Worksheets("°¡Ã­").Range("A3:D13") = ""
+    
+    
+    Application.ScreenUpdating = False
+    
+    For numOfGacha = 0 To 10
+        
+        rNum = Int(Rnd * 100)
+        thishero = Int(Rnd * 10) + 1
+        trap = Int(Rnd * 3) + 1
+        
+        If rNum <= 1 Then
+        
+            If Worksheets("¿µ¿õ¸ñ·Ï").Cells(0 + thishero * 3, 2).Value = 6 Then
+            
+                dest.Offset(0 + numOfGacha, 0) = Worksheets("¿µ¿õ¸ñ·Ï").Cells(0 + thishero * 3, 1)
+                dest.Offset(0 + numOfGacha, 1) = Worksheets("¿µ¿õ¸ñ·Ï").Cells(0 + thishero * 3, 2)
+                dest.Offset(0 + numOfGacha, 2) = Worksheets("¿µ¿õ¸ñ·Ï").Cells(0 + thishero * 3, 3)
+                
+                
+            ElseIf Worksheets("¿µ¿õ¸ñ·Ï").Cells(1 + thishero * 3, 2).Value = 5 Then
+            
+                dest.Offset(0 + numOfGacha, 0) = Worksheets("¿µ¿õ¸ñ·Ï").Cells(1 + thishero * 3, 1)
+                dest.Offset(0 + numOfGacha, 1) = Worksheets("¿µ¿õ¸ñ·Ï").Cells(1 + thishero * 3, 2)
+                dest.Offset(0 + numOfGacha, 2) = Worksheets("¿µ¿õ¸ñ·Ï").Cells(1 + thishero * 3, 3)
+                
+            End If
+          
+            
+        ElseIf rNum <= 21 Then
+                If Worksheets("¿µ¿õ¸ñ·Ï").Cells(2 + thishero * 3, 2).Value = 4 Then
+'
+                    dest.Offset(0 + numOfGacha, 0) = Worksheets("¿µ¿õ¸ñ·Ï").Cells(2 + thishero * 3, 1)
+                    dest.Offset(0 + numOfGacha, 1) = Worksheets("¿µ¿õ¸ñ·Ï").Cells(2 + thishero * 3, 2)
+                    dest.Offset(0 + numOfGacha, 2) = Worksheets("¿µ¿õ¸ñ·Ï").Cells(2 + thishero * 3, 3)
+         
+            End If
+            
+            
+        ElseIf rNum <= 100 Then
+        
+                If Worksheets("¿µ¿õ¸ñ·Ï").Cells(32 + trap, 2).Value = 3 Then
+                    dest.Offset(0 + numOfGacha, 0) = Worksheets("¿µ¿õ¸ñ·Ï").Cells(32 + trap, 1)
+                    dest.Offset(0 + numOfGacha, 1) = Worksheets("¿µ¿õ¸ñ·Ï").Cells(32 + trap, 2)
+                    dest.Offset(0 + numOfGacha, 2) = Worksheets("¿µ¿õ¸ñ·Ï").Cells(32 + trap, 3)
+                    
+                ElseIf Worksheets("¿µ¿õ¸ñ·Ï").Cells(32 + trap, 2).Value = 2 Then
+                    dest.Offset(0 + numOfGacha, 0) = Worksheets("¿µ¿õ¸ñ·Ï").Cells(32 + trap, 1)
+                    dest.Offset(0 + numOfGacha, 1) = Worksheets("¿µ¿õ¸ñ·Ï").Cells(32 + trap, 2)
+                    dest.Offset(0 + numOfGacha, 2) = Worksheets("¿µ¿õ¸ñ·Ï").Cells(32 + trap, 3)
+                    
+                ElseIf Worksheets("¿µ¿õ¸ñ·Ï").Cells(32 + trap, 2).Value = 1 Then
+                    dest.Offset(0 + numOfGacha, 0) = Worksheets("¿µ¿õ¸ñ·Ï").Cells(32 + trap, 1)
+                    dest.Offset(0 + numOfGacha, 1) = Worksheets("¿µ¿õ¸ñ·Ï").Cells(32 + trap, 2)
+                    dest.Offset(0 + numOfGacha, 2) = Worksheets("¿µ¿õ¸ñ·Ï").Cells(32 + trap, 3)
+        
+                End If
+           
+        End If
+            
+        
+    Next
+    
+    
+End Sub
+
