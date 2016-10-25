@@ -1,0 +1,16 @@
+Sub ReOrganizer()
+    Dim dest As Range
+    Set dest = Worksheets("Sheet3").Range("A3")
+    Application.ScreenUpdating = False
+    
+        For i = 0 To 32
+        dest.Offset(0 + i, 0) = Worksheets("sheet2").Cells(1, 2 + 4 * i)
+        dest.Offset(0 + i, 2) = Worksheets("sheet2").Cells(5, 2 + 4 * i)
+        dest.Offset(0 + i, 3) = 30
+        dest.Offset(0 + i, 4) = "±âº»"
+        dest.Offset(0 + i, 5) = Worksheets("sheet2").Cells(9, 1 + 4 * i)
+        dest.Offset(0 + i, 6) = Worksheets("sheet2").Cells(9, 2 + 4 * i)
+        dest.Offset(0 + i, 7) = Worksheets("sheet2").Cells(9, 3 + 4 * i)
+        dest.Offset(0 + i, 8) = Worksheets("sheet2").Cells(9, 4 + 4 * i)
+    Next
+End Sub
